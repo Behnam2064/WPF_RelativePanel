@@ -1,21 +1,27 @@
 # WPF_RelativePanel
+**For more information, you can look at the TestBPanel project**
 
-For more information, you can look at the TestBPanel project
+**How do I use it?**
 
-First, add WPF_RP project to the destination project (WPF) References
-  Solution Explorer -> Your WPF Project Name -> References
-    Right click -> Add Reference...
-      Projects -> WPF_RP
+<p>First, add WPF_RP project to the destination project (WPF) References</p>
+  <p></p>Solution Explorer -> Your WPF Project Name -> References</p>
+    <p></p>Right click -> Add Reference...</p>
+      <p></p>Projects -> WPF_RP</p>
 
-Secound, add namespace to xaml
-  xmlns:bp="clr-namespace:WPF_RP.Panels;assembly=BPanel"
-  
+<p>Secound, add namespace to xaml</p>
+
+``````xaml
+xmlns:bp="clr-namespace:WPF_RP.Panels;assembly=BPanel"
+``````
+
 Using the relative panel:
-        <bp:BPanel>
+
+``````xaml
+  <bp:BPanel>
             <TextBlock
-                Height="100"
                 Background="Yellow"
                 x:Name="tbCenterPanel"
                 bp:BPanel.CenterOfPanel="True"
-                Text="Text in center of panel" />
-         </bp:BPanel>
+                Text="Text in the middle of the window" />
+     </bp:BPanel>
+``````
