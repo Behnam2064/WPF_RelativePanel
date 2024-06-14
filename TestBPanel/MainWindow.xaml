@@ -1,0 +1,71 @@
+﻿<Window x:Class="TestBPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestBPanel"
+        xmlns:bp="clr-namespace:WPF_RP.Panels;assembly=BPanel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+
+        <!--Very important point to use the current class.
+            Elements that affect the location of other classes should be written at the beginning of xaml-->
+
+
+        <bp:BPanel
+            >
+            <TextBlock
+                Height="100"
+                Background="Yellow"
+                x:Name="tbCenterPanel"
+                bp:BPanel.CenterOfPanel="True"
+                Text="Text in center of panel" />
+
+            <Rectangle
+                Visibility="Visible"
+                bp:BPanel.BehindOf="{Binding ElementName=tbCenterPanel}"    
+                x:Name="rec1"
+                Fill="GreenYellow"
+                Height="50"
+                Width="50" />
+
+            <Rectangle
+                Visibility="Visible"
+                bp:BPanel.FrontBottomOf="{Binding ElementName=tbCenterPanel}"
+                x:Name="rec2"
+                Fill="Green"
+                Height="50"
+                Width="50" />
+            <Rectangle
+                Visibility="Visible"
+                bp:BPanel.BehindBottomOf="{Binding ElementName=tbCenterPanel}"
+                x:Name="rec3"
+                Fill="Green"
+                Height="50"
+                Width="50" />
+            <Rectangle
+                Visibility="Visible"
+                bp:BPanel.FrontOf="{Binding ElementName=tbCenterPanel}"
+                x:Name="rec4"
+                Fill="GreenYellow"
+                Height="50"
+                Width="50" />
+            <Rectangle
+                Visibility="Visible"
+                bp:BPanel.BelowLeftOutsideOf="{Binding ElementName=tbCenterPanel}"
+                x:Name="rec6"
+                Fill="Aqua"
+                Height="50"
+                Width="50" />
+            <Rectangle
+                Visibility="Visible"
+                bp:BPanel.AboveRightOf="{Binding ElementName=tbCenterPanel}"
+                x:Name="rec7"
+                Fill="Red"
+                Height="50"
+                Width="50" />
+        </bp:BPanel>
+    </Grid>
+</Window>
